@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const express = require("express"); // required installed packages
 const bodyParser = require("body-parser");
+require('dotenv').config();
 
 const port = 8080
-// const url = 'mongodb://127.0.0.1:27017/testdb'
-const url = 'mongodb+srv://myapp:myapp123123@tcoc.ii33cir.mongodb.net/xxffing'
+const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/testdb';
 
 const app = express(); // app constant by using express
 app.use(bodyParser.json());
@@ -19,9 +19,12 @@ const personSchema = new mongoose.Schema({
 
 // Create a model from the schema
 const Person = mongoose.model('Person', personSchema);
+
+
 app.get("/", function (req, res) {
-  res.send("xffing");
+  res.send("Home");
 });
+
 app.get("/findAll", function (req, res) {
     Person.find({})
     .then((people) => {
