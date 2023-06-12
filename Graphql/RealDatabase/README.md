@@ -44,7 +44,7 @@ Follow these steps to run the server:
 ```
 {
   getAllUsers {
-    id
+    order
     firstName
     lastName
     email
@@ -55,8 +55,20 @@ Follow these steps to run the server:
 
 ```
 {
-  getUserById(id: 1) {
-    id
+  getUserById(_id: "64873a63b2d93269fbff5c96") {
+    order
+    firstName
+    lastName
+    email
+    password
+  }
+}
+```
+
+```
+{
+  getUserByOrder(order: 1) {
+		order
     firstName
     lastName
     email
@@ -73,13 +85,13 @@ mutation {
 
 ```
 mutation {
-  deleteUser(id: 1) 
+  deleteUser(_id: "64873a63b2d93269fbff5c96") 
 }
 ```
 
 ```
 mutation {
-  updateUser(id: 1, firstName: "Updated", lastName: "User") 
+  updateUser(_id: "64873a63b2d93269fbff5c96", order:69 ,firstName: "Updated", lastName: "User") 
 }
 
 ```

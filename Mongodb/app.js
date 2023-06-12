@@ -9,7 +9,10 @@ const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/testdb';
 const app = express(); // app constant by using express
 app.use(bodyParser.json());
 
-mongoose.connect(url);
+mongoose.connect(url)
+.then(() => console.log('Server is connected to MongoDB'))
+.catch((err) => console.log(err));
+
 
 
 // Define a schema for your collection
@@ -77,7 +80,7 @@ app.post("/add", function (req, res) {
         name: req.body.name
       });
       // Create a new document and save it to the collection
-      newPerson.save()
+      newPerson.save();
       res.send(`${req.body.name} was added!`);
     }else{
       res.send(`Can not add ${req.body.name} because it already added!`);

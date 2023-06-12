@@ -1,5 +1,5 @@
 {
-  "name": "database",
+  "name": "realdatabase",
   "version": "1.0.0",
   "description": "",
   "main": "Server.js",
@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
-    "graphql": "^15.8.0"
+    "graphql": "^15.8.0",
+    "mongoose": "^7.2.3"
   }
 }
