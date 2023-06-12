@@ -39,7 +39,9 @@ Follow these steps to run the server:
 {
   hello
 }
+```
 
+```
 {
   getAllUsers {
     id
@@ -49,7 +51,9 @@ Follow these steps to run the server:
     password
   }
 }
+```
 
+```
 {
   getUserById(id: 1) {
     id
@@ -59,15 +63,21 @@ Follow these steps to run the server:
     password
   }
 }
+```
 
+```
 mutation {
   addUser(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password") 
 }
+```
 
+```
 mutation {
   deleteUser(id: 1) 
 }
+```
 
+```
 mutation {
   updateUser(id: 1, firstName: "Updated", lastName: "User") 
 }
